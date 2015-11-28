@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency "rspec"
   s.add_development_dependency "nokogiri"
   s.add_development_dependency "pry"
-  s.add_development_dependency "open-uri" #check spelling
+  s.add_development_dependency "open-uri"
 
   s.executables = ["gem_exist"]
 end
