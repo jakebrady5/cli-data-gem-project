@@ -6,7 +6,7 @@ class GemExist::SearchRubygems
     @names = []
     @project_uri = []
     @search_term = search_term
-    #add ability to handle multi word strings
+    #add ability to handle multi word strings? gems don't appear to contain spaces?
     @url = "https://rubygems.org/api/v1/search.json?query=#{search_term}"
     get_search_results
   end
@@ -47,10 +47,7 @@ class GemExist::SearchRubygems
     @downloads = doc.css(".gem__downloads").first.text
     @author = doc.css(".t-list__item p").text
   end
-
-
-
-
+  
 end
 
 

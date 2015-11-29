@@ -1,7 +1,6 @@
 # copied below, check validity
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-#require 'lib/gem_exist/version'
 
 Gem::Specification.new do |s|
   s.name = 'gem_exist'
@@ -11,7 +10,6 @@ Gem::Specification.new do |s|
   s.description = "Search rubygems.org for gem info."
   s.author = ["Jake Brady"]
   s.email = "jakebrady5@gmail.com"
-  #s.files = `git ls-files`.split($\)
   s.files = ["lib/gem_exist.rb", "lib/gem_exist/cli.rb", "lib/gem_exist/search_rubygems.rb", "lib/gem_exist/version.rb"]
   s.executables = ["gem-exist"]
   s.require_paths = ["lib", "lib/gem_exist"]
