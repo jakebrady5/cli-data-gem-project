@@ -3,6 +3,7 @@ require 'open-uri'
 require 'pry'
 require 'json'
 #these^ requirements aren't being met elsewhere, fix that
+require_relative '../gem_exist.rb'
 
 class Search_rubygems
 

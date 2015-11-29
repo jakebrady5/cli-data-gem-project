@@ -1,4 +1,8 @@
 #!/usr/bin/env ruby
 
-require 'gem_exist'
+require_relative '../lib/gem_exist'
+require_relative '../lib/gem_exist/cli'
+require_relative '../lib/gem_exist/search_rubygems'
 
+
+Gem_exist::CLI.new

@@ -1,10 +1,11 @@
 require 'open-uri'
 require 'nokogiri'
 require 'pry'
+require 'json'
 
-require 'gem_exist/cli'
-require 'search_rubygems'
-require 'version'
+require_relative 'gem_exist/cli'
+require_relative 'gem_exist/search_rubygems'
+require_relative 'gem_exist/version'
 
 module Gem_exist
 
@@ -13,3 +14,5 @@ module Gem_exist
   end
 
 end
+
+Cli.new
