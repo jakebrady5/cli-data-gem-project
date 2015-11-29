@@ -1,4 +1,4 @@
-class CLI
+class Gem_exist::CLI
 
   def begin_new_search
     puts "Enter a term to search on rubygems.org:"
@@ -8,5 +8,3 @@ class CLI
 
 
 end
-
-CLI.new.begin_new_search

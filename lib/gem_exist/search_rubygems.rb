@@ -2,6 +2,7 @@ require 'nokogiri'
 require 'open-uri'
 require 'pry'
 require 'json'
+#these^ requirements aren't being met elsewhere, fix that
 
 class Search_rubygems
 
@@ -65,8 +66,6 @@ class Search_rubygems
 
 
 end
-
-
 
 
 
