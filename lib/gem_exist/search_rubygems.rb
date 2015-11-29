@@ -1,13 +1,6 @@
-require 'nokogiri'
-require 'open-uri'
-require 'pry'
-require 'json'
-#these^ requirements aren't being met elsewhere, fix that
-require_relative '../gem_exist.rb'
+class GemExist::SearchRubygems
 
-class Search_rubygems
-
-  attr_accessor :search_term, :url, :results, :names, :project_uri
+  attr_accessor :search_term, :url, :results, :names, :project_uri, :desc, :author, :downloads
 
   def initialize(search_term)
     @names = []
@@ -23,7 +16,6 @@ class Search_rubygems
     narrow_results
     populate_fields
     display_names
-    get_gem_data(1)
   end
 
   def narrow_results
@@ -42,28 +34,21 @@ class Search_rubygems
   end
 
   def display_names
+    puts "-------------------------------------------"
     @names.each_with_index{|a, i| puts "#{i+1}. #{a}"}
+    puts "-------------------------------------------"
   end
 
   def get_gem_data(num)
     this_url = @project_uri[num - 1]
     index = open(this_url)
     doc = Nokogiri::HTML(index)
-    desc = doc.css(".gem__desc p").text
-    downloads = doc.css(".gem__downloads").first.text
-    author = doc.css(".t-list__item p").text
-    puts "Gem Name: #{@names[num - 1]}"
-    puts "Gem Description: #{desc}"
-    puts "Gem Author: #{author}"
-    puts "Gem Downloads: #{downloads}"
+    @desc = doc.css(".gem__desc p").text
+    @downloads = doc.css(".gem__downloads").first.text
+    @author = doc.css(".t-list__item p").text
   end
 
-  # def display_gem_data(num)
-  #   #puts "Gem Name:" @names[num - 1]
-  #   puts "Gem Description: #{desc}"
-  #   puts "Gem Author: #{author}"
-  #   puts "Gem Downloads: #{downloads}"
-  # end
+
 
 
 end
